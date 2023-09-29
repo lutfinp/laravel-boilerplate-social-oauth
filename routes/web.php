@@ -83,6 +83,6 @@ Route::get('/complete-registration', 'Auth\RegisterController@completeRegistrati
 
 Route::post('/2fa', function(){
     return redirect(URL()->previous());
-})->name('2fa')->middleware();
+})->name('2fa')->middleware('2fa');
 
 Route::get('tes/2fa', 'MembershipController@index')->name('tes.2fa')->middleware(['auth', '2fa']);
